@@ -1,21 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Cat from './components/Cat';
-import Cat1 from './components/Cat1';
-import Cafe from './components/Cat3';
-import Cafe1 from './components/Cat4';
-import LoginScreen from './components/LoginScreen';
+import * as React from 'react';
+import LoginScreen1 from './components/LoginPaper';
+import CreateNewAccount from './components/CreateNewAccount';
+import ForgotMyPassword from './components/ForgotMyPassword';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Cat /> */}
-      {/* <Cat1 /> */}
-      {/* <Cafe /> */}
-      {/* <Cafe1 /> */}
-      <LoginScreen />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen1} options={{ headerShown: false }} />
+        <Stack.Screen name="CreateNewAccount" component={CreateNewAccount} />
+        <Stack.Screen name="ForgotMyPassword" component={ForgotMyPassword} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
