@@ -4,6 +4,8 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-nati
 const projects = [
   { name: 'Login', label: 'Bài 3' },
   { name: 'Home2', label: 'Buoi 4' },
+  { name: 'LoginScreen', label: 'Demo' },
+  { name: 'TodoList', label: 'Buoi 5' },
 ];
 
 const HomeScreen = ({ navigation }) => {
